@@ -15,7 +15,16 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [ uv ];
+          packages =
+            with pkgs;
+            [
+              gcc
+              python312
+              uv
+            ]
+            ++ (with python312Packages; [
+              pygame
+            ]);
           shellHook = ''exec fish'';
         };
       }
