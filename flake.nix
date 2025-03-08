@@ -23,6 +23,8 @@
               uv
             ]
             ++ (with python312Packages; [
+              torch
+              tkinter
               pygame
             ]);
           shellHook = ''exec fish'';
